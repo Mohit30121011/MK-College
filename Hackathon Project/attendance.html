@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #0044cc;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #0044cc;
+            color: white;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0033a0;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .status.present {
+            color: green;
+        }
+
+        .status.absent {
+            color: red;
+        }
+
+        .summary {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .add-student-form, .add-topic-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            text-align: center;
+        }
+
+        .add-student-form input, .add-topic-form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .add-topic-form {
+            margin-top: 30px;
+        }
+
+        .topic-timing-list {
+            margin-top: 10px;
+            padding-left: 20px;
+            font-size: 1em;
+        }
+
+        .topic-timing-item {
+            margin: 5px 0;
+        }
+
+        .date-container {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .time-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .time-container label {
+            align-self: center;
+        }
+
+        /* Style for the selected button */
+        .selected {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Management</h1>
+
+    <!-- Date Display -->
+    <div class="date-container" id="currentDate"></div>
+
+    <!-- Add Student and Add Topic side by side -->
+    <div class="form-container">
+        <div class="add-student-form">
+            <input type="number" id="studentIdInput" placeholder="Student ID" required>
+            <input type="text" id="studentNameInput" placeholder="Student Name" required>
+            <button onclick="addStudent()">Add Student</button>
+        </div>
+
+        <div class="add-topic-form">
+            <input type="text" id="topicInput" placeholder="Topic Name" required>
+            <div class="time-container">
+                <label for="fromTimeInput">From:</label>
+                <input type="time" id="fromTimeInput" required>
+                <label for="toTimeInput">To:</label>
+                <input type="time" id="toTimeInput" required>
+            </div>
+            <button onclick="addTopic()">Add Topic</button>
+        </div>
+    </div>
+
+    <div class="topic-timing-list" id="topicTimingList"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Attendance</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+            <tr>
+                <td>001</td>
+                <td>Mohit Gupta</td>
+                <td>
+                    <button onclick="toggleAttendance(this)">Present</button>
+                </td>
+                <td class="status">-</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Khushi Singh</td>
+                <td>
+                    <button onclick="toggleAttendance(this)">Present</button>
+                </td>
+                <td class="status">-</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Kunal Shetty</td>
+                <td>
+                    <button onclick="toggleAttendance(this)">Present</button>
+                </td>
+                <td class="status">-</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Mansi Patel</td>
+                <td>
+                    <button onclick="toggleAttendance(this)">Present</button>
+                </td>
+                <td class="status">-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="submitAttendance()">Submit</button>
+
+    <div class="summary">
+        <p id="attendanceSummary">Total Present: 0 | Total Absent: 0</p>
+    </div>
+
+    <script>
+        function displayCurrentDate() {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString();
+            document.getElementById('currentDate').textContent = `Date: ${formattedDate}`;
+        }
+
+        function addTopic() {
+            const topic = document.getElementById('topicInput').value;
+            const fromTime = document.getElementById('fromTimeInput').value;
+            const toTime = document.getElementById('toTimeInput').value;
+
+            if (topic && fromTime && toTime) {
+                const topicList = document.getElementById('topicTimingList');
+                const topicItem = document.createElement('div');
+                topicItem.classList.add('topic-timing-item');
+                topicItem.textContent = `Topic: ${topic} | From: ${fromTime} To: ${toTime}`;
+                topicList.appendChild(topicItem);
+
+                document.getElementById('topicInput').value = '';
+                document.getElementById('fromTimeInput').value = '';
+                document.getElementById('toTimeInput').value = '';
+            } else {
+                alert('Please enter Topic, From Time, and To Time.');
+            }
+        }
+
+        function addStudent() {
+            const studentId = document.getElementById('studentIdInput').value;
+            const studentName = document.getElementById('studentNameInput').value;
+
+            if (studentId && studentName) {
+                const newRow = document.createElement('tr');
+
+                newRow.innerHTML = `
+                    <td>${studentId}</td>
+                    <td>${studentName}</td>
+                    <td>
+                        <button onclick="toggleAttendance(this)">Present</button>
+                    </td>
+                    <td class="status">-</td>
+                `;
+
+                document.getElementById('studentTableBody').appendChild(newRow);
+
+                document.getElementById('studentIdInput').value = '';
+                document.getElementById('studentNameInput').value = '';
+            } else {
+                alert('Please enter both Student ID and Name');
+            }
+        }
+
+        function toggleAttendance(button) {
+            const row = button.closest('tr');
+            // Temporarily mark the student as selected
+            if (button.textContent === 'Present') {
+                button.textContent = 'Selected';
+                button.classList.add('selected'); // Add green background color
+            } else {
+                button.textContent = 'Present';
+                button.classList.remove('selected'); // Remove green background color
+            }
+        }
+
+        function submitAttendance() {
+            const rows = document.querySelectorAll('tbody tr');
+            let presentCount = 0;
+            let absentCount = 0;
+
+            rows.forEach(row => {
+                const button = row.querySelector('button');
+                const statusCell = row.querySelector('.status');
+
+                if (button.classList.contains('selected')) {
+                    // Mark as Present
+                    statusCell.textContent = 'Present';
+                    statusCell.className = 'status present';
+                    presentCount++;
+                } else {
+                    // Mark as Absent
+                    statusCell.textContent = 'Absent';
+                    statusCell.className = 'status absent';
+                    absentCount++;
+                }
+            });
+
+            const summaryText = `Total Present: ${presentCount} | Total Absent: ${absentCount}`;
+            document.getElementById('attendanceSummary').textContent = summaryText;
+        }
+
+        displayCurrentDate();
+    </script>
+</body>
+</html>

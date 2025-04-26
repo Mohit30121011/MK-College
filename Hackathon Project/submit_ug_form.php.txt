@@ -1,0 +1,32 @@
+<?php
+include('db.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $dob = $_POST['dob'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $course = $_POST['course'];
+    $tenth = $_POST['tenth'];
+    $twelfth = $_POST['twelfth'];
+    $aadhar = $_POST['aadhar'];
+    $idproof = $_POST['idproof'];
+    $photo = $_POST['email'];
+    $signature = $_POST['signature'];
+    $declaration = $_POST['declaration'];
+
+    if (!empty($name) && !empty($dob) && !empty($gender) && !empty($email) && !empty($phone) && !empty($address) && !empty($course) && !empty($tenth) && !empty($twelfth) && !empty($aadhar) && !empty($idproof) && !empty($photo) && !empty($signature) && !empty($declaration)) {
+        $sql = "INSERT INTO ug_admission_form (name, dob, gender, email, phone, address, course, tenth, twelfth, aadhar, idproof, photo, signature, declaration) VALUES ('$name', '$dob',)";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Thank you for your message! We will get back to you soon.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    } else {
+        echo "Please fill out all fields.";
+    }
+}
+?>

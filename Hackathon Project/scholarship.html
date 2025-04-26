@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Programs - Indian Government</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('college.png') no-repeat center center/cover;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003366, #0074d9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header .logo { 
+            position: absolute;
+            top: 20px; 
+            right: 10px;
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Marquee Styles */
+        .marquee-container {
+            background-color: #ffcc00;
+            color: #003366;
+            font-size: 1.2em;
+            padding: 10px 0;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .marquee-container span {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #00509e;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .scholarship {
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .scholarship:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .scholarship h3 {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .scholarship p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            padding: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            background-color: #0074d9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .apply-btn:hover {
+            background-color: #00509e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Filters Section */
+        .filters {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .filters select, .filters button {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1em;
+            border: 1px solid #0074d9;
+            background-color: white;
+        }
+
+        .filters button {
+            background-color: #00509e;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .filters button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Government Scholarship Programs</h1>
+        <img src="textlogo.png" alt="Logo" class="logo">
+    </header>
+
+    <!-- Marquee for Important Updates -->
+    <div class="marquee-container">
+        <span>🚨 Last Date to Apply for Scholarships: January 30, 2025. Don't Miss Out! 🚨</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="scholarship.html">Scholarships</a>
+        <a href="student_login.html">Student</a>
+        <a href="faculty_login.html">Faculty</a>
+        <a href="careers.html">Careers</a><a href="staff.html">Staff</a>
+    </nav>
+
+    <!-- Filters Section -->
+    <div class="filters">
+        <select id="scholarshipFilter">
+            <option value="all">All Scholarships</option>
+            <option value="merit">Merit-based</option>
+            <option value="minority">Minority Communities</option>
+            <option value="sc">Scheduled Castes</option>
+            <option value="girls">Girls</option>
+            <option value="differently-abled">Differently-abled</option>
+        </select>
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
+    <!-- Scholarships Container -->
+    <div class="container" id="scholarshipContainer">
+        <h2>Explore Scholarships for Students</h2>
+
+        <!-- Scholarship Entries (Initially all visible) -->
+        <div class="scholarship" data-category="merit">
+            <h3>1. National Scholarship Portal (NSP)</h3>
+            <p>The National Scholarship Portal is a one-stop platform for students to access various scholarships offered by the central and state governments as well as other government agencies. Key schemes under NSP include:</p>
+            <ul>
+                <li><strong>Pre-Matric Scholarship:</strong> For students from economically weaker sections studying in Classes 1 to 10.</li>
+                <li><strong>Post-Matric Scholarship:</strong> For students from minority communities pursuing higher education after Class 10.</li>
+                <li><strong>Merit-cum-Means Scholarship:</strong> For meritorious students from minority communities enrolled in professional and technical courses.</li>
+            </ul>
+            <a href="https://scholarships.gov.in/" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="scholarship" data-category="minority">
+            <h3>2. Central Sector Scheme of Scholarship for College and University Students</h3>
+            <p>This scheme provides financial assistance to academically outstanding students from low-income families to support their higher education in colleges and universities. Key features include:</p>
+            <ul>
+                <li>Applicable for students who scored above 80% in their Class 12 board exams.</li>
+                <li>Offers an annual scholarship amount for undergraduate and postgraduate studies.</li>
+                <li>Ensures the continuity of support for the entire duration of the course, subject to academic performance.</li>
+            </ul>
+            <a href="https://www.myscheme.gov.in/schemes/csss-cus" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="scholarship" data-category="sc">
+            <h3>3. Post-Matric Scholarship for Scheduled Castes (SC) Students</h3>
+            <p>This program aims to assist SC students in pursuing post-matriculation or post-secondary education. Highlights include:</p>
+            <ul>
+                <li>Coverage of tuition fees, maintenance allowance, and other related costs.</li>
+                <li>Support for students studying in recognized institutions across India.</li>
+                <li>Targeted towards students with an annual family income below a specified threshold.</li>
+            </ul>
+            <a href="https://socialjustice.gov.in/schemes/25" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="scholarship" data-category="girls">
+            <h3>4. Pragati Scholarship for Girls</h3>
+            <p>The Pragati Scholarship is designed to empower women by encouraging them to pursue higher education in technical fields. Key details include:</p>
+            <ul>
+                <li>Available for up to two girl children per family.</li>
+                <li>Scholarship includes tuition fee waiver and a monthly allowance.</li>
+                <li>Eligibility requires enrollment in AICTE-approved technical institutions.</li>
+            </ul>
+            <a href="https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="scholarship" data-category="differently-abled">
+            <h3>5. Saksham Scholarship for Differently-Abled Students</h3>
+            <p>This scholarship supports differently-abled students pursuing technical education. Features include:</p>
+            <ul>
+                <li>Assistance for tuition fees and incidental expenses.</li>
+                <li>Open to students with more than 40% disability certified by a competent authority.</li>
+                <li>Applicable for courses in AICTE-approved institutions.</li>
+            </ul>
+            <a href="https://www.aicte-india.org/sites/default/files/Saksham.pdf" class="apply-btn">Apply Now</a>
+        </div>
+
+        <div class="scholarship" data-category="all">
+            <h3>6. Ishan Uday Scholarship for North Eastern Region</h3>
+            <p>To promote higher education and reduce the dropout rate in the North-Eastern region, this scholarship offers:</p>
+            <ul>
+                <li>Monthly financial support for undergraduate and postgraduate courses.</li>
+                <li>Eligibility includes domicile in one of the North-Eastern states and enrollment in a recognized institution.</li>
+                <li>Preference for students from families with lower income levels.</li>
+            </ul>
+            <a href="https://www.ugc.gov.in/Scholarships/stu_Scholarship5" class="apply-btn">Apply Now</a>
+        </div>
+
+    </div>
+
+        <footer style="text-align: center; padding: 20px;background-color: #00274d;color: white;margin-top: 40px;">
+     <div style="margin-top: 10px;">
+        <p>© 2025 MK Degree College. All rights reserved.</p>
+    </div>
+    <div>
+        <div class="nav1">
+            <a href="home.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+            <a href="admissions.html" style="color: white; margin: 0 15px; text-decoration: none;">Admissions</a>
+            <a href="courses.html" style="color: white; margin: 0 15px; text-decoration: none;">Courses</a>
+            <a href="contact.html" style="color: white; margin: 0 15px; text-decoration: none;">Contact Us</a>
+            <a href="scholarships.html" style="color: white; margin: 0 15px; text-decoration: none;">Scholarships</a>
+            <a href="students.html" style="color: white; margin: 0 15px; text-decoration: none;">Student</a>
+            <a href="faculty.html" style="color: white; margin: 0 15px; text-decoration: none;">Faculty</a>
+            <a href="careers.html" style="color: white; margin: 0 15px; text-decoration: none;">Careers</a>
+        </div>
+    </div>
+   </footer>
+
+    <script>
+        // JavaScript function to apply filters
+        function applyFilters() {
+            const filterValue = document.getElementById('scholarshipFilter').value;
+            const scholarships = document.querySelectorAll('.scholarship');
+            
+            scholarships.forEach(scholarship => {
+                if (filterValue === 'all') {
+                    scholarship.style.display = 'block'; // Show all scholarships
+                } else if (scholarship.getAttribute('data-category') === filterValue) {
+                    scholarship.style.display = 'block'; // Show filtered scholarships
+                } else {
+                    scholarship.style.display = 'none'; // Hide non-matching scholarships
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

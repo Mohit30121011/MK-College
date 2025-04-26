@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Fee payment Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('college.png') no-repeat center center/cover;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003366, #0074d9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header .logo { 
+            position: absolute;
+            top: 20px; 
+            right: 10px;
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #00509e;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #00509e;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .fee-section {
+            margin-top: 20px;
+        }
+
+        .fee-section label {
+            margin-bottom: 5px;
+        }
+
+        .fee-section input {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .fee-info {
+            font-size: 1em;
+            color: #555;
+            margin-top: -10px;
+        }
+
+        .fixed-amount {
+            font-weight: normal;
+            color: #0074d9;
+        }
+
+        .course-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .course-selection label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .course-info {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: -10px;
+        }
+
+        .fee-radio-group {
+            margin-bottom: 20px;
+        }
+
+        .fee-radio-group input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Additional Fee Payment Portal</h1>
+        <img src="textlogo.png" alt="Logo" class="logo">
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="scholarship.html">Scholarships</a>
+        <a href="student_login.html">Student</a>
+        <a href="faculty_login.html">Faculty</a>
+        <a href="careers.html">Careers</a><a href="staff.html">Staff</a>
+    </nav>
+
+    <div class="container">
+        <h2>Pay Your Fees</h2>
+        <form action="submit_fee_payment.php" method="post">
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required>
+
+            <label for="studentID">Student ID</label>
+            <input type="text" id="studentID" name="studentID" placeholder="Enter your student ID" required>
+
+            <label for="program">Select Program</label>
+            <select id="program" name="program" required>
+                <option value="">-- Select Program --</option>
+                <option value="undergraduate">Undergraduate</option>
+                <option value="postgraduate">Postgraduate</option>
+            </select>
+
+            <label for="semester">Select Semester</label>
+            <select id="semester" name="semester" required>
+                <option value="">-- Select Semester --</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+
+            <!-- Additional Fees Section -->
+            <div class="fee-section">
+                <h3>Additional Fees</h3>
+
+                <!-- ATKT Fee with Subject Selection -->
+                <div class="fee-radio-group">
+                    <label for="atkt">ATKT Fee</label>
+                    <label><input type="radio" name="atkt" value="1500" required> ₹ 1500 per subject</label>
+                    <label for="atktSubjects">Number of Subjects</label>
+                    <select id="atktSubjects" name="atktSubjects" required>
+                        <option value="">-- Select Number of Subjects --</option>
+                        <option value="1">1 Subject</option>
+                        <option value="2">2 Subjects</option>
+                        <option value="3">3 Subjects</option>
+                        <option value="4">4 Subjects</option>
+                        <option value="5">5 Subjects</option>
+                    </select>
+                    <div class="fee-info">
+                        <p>Choose the number of subjects for which you have to pay the ATKT fee. The fee is ₹1500 per subject.</p>
+                    </div>
+                </div>
+
+                <!-- Journal Fee -->
+                <div class="fee-radio-group">
+                    <label for="journal">Journal Fee</label>
+                    <label><input type="radio" name="journal" value="1000" required> ₹ 1000</label>
+                </div>
+
+                <!-- College Books Fee -->
+                <div class="fee-radio-group">
+                    <label for="collegeBooks">College Books Fee</label>
+                    <label><input type="radio" name="collegeBooks" value="2000" required> ₹ 2000</label>
+                </div>
+
+                <!-- Library Card Fee -->
+                <div class="fee-radio-group">
+                    <label for="libraryCard">Library Card Fee</label>
+                    <label><input type="radio" name="libraryCard" value="500" required> ₹ 500</label>
+                </div>
+
+                <!-- Library Membership Fee -->
+                <div class="fee-radio-group">
+                    <label for="libraryMembership">Library Membership Fee</label>
+                    <label><input type="radio" name="libraryMembership" value="1000" required> ₹ 1000</label>
+                </div>
+
+                <!-- Course Selection Section with One Option for Each Course -->
+                <div class="course-selection">
+                    <h3>Select Additional Courses (Choose One Option for Each Course)</h3>
+
+                    <!-- Seminar Courses -->
+                    <label for="bhagavadGita">
+                        <input type="radio" id="bhagavadGita" name="bhagavadGita" value="bhagavadGita"> Bhagavad Gita Seminar
+                    </label>
+                    <div class="course-info">Fixed Amount: <span class="fixed-amount">₹ 1200</span></div>
+
+                    <!-- Additional Language Courses -->
+                    <label for="german">
+                        <input type="radio" id="german" name="german" value="german"> German Language Course
+                    </label>
+                    <div class="course-info">Fixed Amount: <span class="fixed-amount">₹ 3000</span></div>
+
+                    <label for="japanese">
+                        <input type="radio" id="japanese" name="japanese" value="japanese"> Japanese Language Course
+                    </label>
+                    <div class="course-info">Fixed Amount: <span class="fixed-amount">₹ 2500</span></div>
+                </div>
+            </div>
+
+            <button type="submit">Submit Payment</button>
+        </form>
+    </div>
+
+    <footer style="text-align: center; padding: 20px;background-color: #00274d;color: white;margin-top: 40px;">
+     <div style="margin-top: 10px;">
+        <p>© 2025 MK Degree College. All rights reserved.</p>
+    </div>
+    <div>
+        <div class="nav1">
+            <a href="home.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+            <a href="admissions.html" style="color: white; margin: 0 15px; text-decoration: none;">Admissions</a>
+            <a href="courses.html" style="color: white; margin: 0 15px; text-decoration: none;">Courses</a>
+            <a href="contact.html" style="color: white; margin: 0 15px; text-decoration: none;">Contact Us</a>
+            <a href="scholarships.html" style="color: white; margin: 0 15px; text-decoration: none;">Scholarships</a>
+            <a href="students.html" style="color: white; margin: 0 15px; text-decoration: none;">Student</a>
+            <a href="faculty.html" style="color: white; margin: 0 15px; text-decoration: none;">Faculty</a>
+            <a href="careers.html" style="color: white; margin: 0 15px; text-decoration: none;">Careers</a>
+        </div>
+    </div>
+   </footer>
+</body>
+</html>

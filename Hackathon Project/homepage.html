@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="icon" type="image" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK Degree College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003366, #0074d9);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        
+        header .logo { 
+            position: absolute;
+            top: 20px; 
+            right: 10px;
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .hero {
+            background: url('college.png') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #ffcc00;
+            color: #003366;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ffd633;
+            transform: scale(1.1);
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+        }
+
+        .features div {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .features div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .features h3 {
+            margin: 0 0 10px;
+            color: #00509e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MK Degree College</h1>
+        <p>Empowering Students for a Brighter Tomorrow</p>
+        <img src="textlogo.png" alt="Logo" class="logo">
+
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Welcome to MK Degree College</h2>
+        <p>Your Gateway to Excellence in Education</p>
+        <button class="button"><a href="home.html">Explore Now</a></button>
+    </div>
+    <section class="features">
+        <div>
+            <h3>World-Class Faculty</h3>
+            <p>Learn from experienced and renowned educators.</p>
+        </div>
+        <div>
+            <h3>State-of-the-Art Campus</h3>
+            <p>Experience learning in a modern and well-equipped environment.</p>
+        </div>
+        <div>
+            <h3>Diverse Programs</h3>
+            <p>Choose from a wide range of undergraduate, postgraduate programs.</p>
+        </div>
+        <div>
+            <h3>Global Opportunities</h3>
+            <p>Engage in exchange programs and international collaborations.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MK Degree College. All rights reserved.</p>
+    </footer>
+</body>
+</html>

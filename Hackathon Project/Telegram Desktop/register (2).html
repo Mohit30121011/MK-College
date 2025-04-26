@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Portal - Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('college.png') no-repeat center center/cover;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003366, #0074d9);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        header .logo { 
+            position: absolute;
+            top: 20px; 
+            right: 10px;
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 8px 0;
+            position: sticky;
+            top: 70px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            color: #003366;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 1.1em;
+            color: #003366;
+        }
+
+        input, select, textarea {
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="radio"] {
+            width: auto;
+        }
+
+        button {
+            background-color: #ffcc00;
+            color: #003366;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ffd633;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 18px;
+            background-color: #003366;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MK Degree College</h1>
+        
+        <img src="textlogo.png" alt="Logo" class="logo">
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="scholarship.html">Scholarships</a>
+    </nav>
+
+    <div class="container">
+        <h2>Create Your Account</h2>
+        <form action="register_backend.php" method="POST" enctype="multipart/form-data">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required><br>
+
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+
+
+
+            <label for="fathername">Father's Name:</label>
+            <input type="text" id="fathername" name="fathername" required><br>
+
+            <label for="mothername">Mother's Name:</label>
+            <input type="text" id="mothername" name="mothername" required><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+
+            <label for="emergency_phone">Emergency Phone Number:</label>
+            <input type="tel" id="emergency_phone" name="emergency_phone" pattern="[0-9]{10}" required><br>
+
+            <label for="Student_Id">Student Id:</label>
+            <input type="text" id="Student_Id" name="Student_Id" required><br>
+
+            
+
+            <label for="fees_receipt">Fees Receipt (Upload Image):</label>
+            <input type="file" id="fees_receipt" name="fees_receipt" accept="image/*" required><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MK Degree College. All rights reserved.</p>
+    </footer>
+</body>
+</html>

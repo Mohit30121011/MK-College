@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Faculty - College Admission Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('wtexture.jpg') no-repeat center center/cover;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003366, #0074d9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header .logo { 
+            position: absolute;
+            top: 20px; 
+            right: 10px;
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #003366;
+        }
+
+        .stream-section {
+            margin-bottom: 40px;
+        }
+
+        .stream-section h3 {
+            font-size: 1.8em;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .faculty-member {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .faculty-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .faculty-member img {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .faculty-member h3 {
+            font-size: 1.5em;
+            color: #00509e;
+        }
+
+        .faculty-member p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Faculty</h1>
+        <img src="textlogo.png" alt="Logo" class="logo">
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="scholarship.html">Scholarships</a>
+        <a href="student_login.html">Student</a>
+        <a href="faculty_login.html">Faculty</a>
+        <a href="careers.html">Careers</a><a href="staff.html">Staff</a>
+    </nav>
+
+    <div class="container">
+        <h2>Meet Our Esteemed Faculty Across Streams</h2>
+
+        <!-- Bachelor of Science in Computer Science Faculty Section -->
+        <div class="stream-section">
+            <h3>BSC in Computer Science</h3>
+            <div class="faculty-grid">
+                <div class="faculty-member">
+                    <img src="faculty1.jpeg" alt="Dr.Santosh Singh(HOD)">
+                    <h3>Dr. Santosh Singh</h3>
+                    <p><strong>Position:</strong> Head of Department</p>
+                    <p><strong>Bio:</strong> Dr. Santosh Singh specializes in Computer Science with 15 years of teaching experience, focusing on Software Engineering and Artificial Intelligence.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty2.jpeg" alt="Mr. Omkar Singh">
+                    <h3>Mr. Omkar Singh</h3>
+                    <p><strong>Position:</strong> IT Director</p>
+                    <p><strong>Bio:</strong> Mr. Omkar Singh focuses on IT project management and implementation, with a passion for educating students in modern IT systems and solutions.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty3.jpeg" alt="Ms. Jyotsana Anthal">
+                    <h3>Ms. Jyotsana Anthal</h3>
+                    <p><strong>Position:</strong> Database Administrator</p>
+                    <p><strong>Bio:</strong> Ms. Jyotsana Anthal is an expert in database systems and management, with a focus on Green Chemistry practices in data science.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty4.jpeg" alt="Ms. Sherilyn Kevin">
+                    <h3>Ms. Sherilyn Kevin</h3>
+                    <p><strong>Position:</strong> IT Manager</p>
+                    <p><strong>Bio:</strong> Ms. Sherilyn Kevin is known for her research in Mathematical Modelling and Differential Equations, focusing on their application in computer science.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty5.jpeg" alt="Dr. Mithilesh Vishwakarma">
+                    <h3>Dr. Mithilesh Vishwakarma</h3>
+                    <p><strong>Position:</strong> IT Specialist</p>
+                    <p><strong>Bio:</strong> Dr. Mithilesh Vishwakarma is an expert in Cybersecurity and Software Development, focusing on modern IT solutions for educational institutions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BSc in Environmental Science Faculty Section -->
+        <div class="stream-section">
+            <h3>BSc in Environmental Science</h3>
+            <div class="faculty-grid">
+                <div class="faculty-member">
+                    <img src="faculty6.jpeg" alt="Dr. Ravi Kumar">
+                    <h3>Dr. Ravi Kumar</h3>
+                    <p><strong>Position:</strong> Professor of Environmental Science</p>
+                    <p><strong>Bio:</strong> Dr. Ravi Kumar is a leading researcher in Environmental Conservation and Sustainability, with a focus on the effects of climate change on biodiversity.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty7.jpeg" alt="Ms. Priya Sharma">
+                    <h3>Ms. Priya Sharma</h3>
+                    <p><strong>Position:</strong> Associate Professor of Environmental Science</p>
+                    <p><strong>Bio:</strong> Ms. Priya Sharma has over a decade of experience in environmental policy and management, with research focusing on urban sustainability.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty8.jpeg" alt="Mr. Vikram Singh">
+                    <h3>Mr. Vikram Singh</h3>
+                    <p><strong>Position:</strong> Assistant Professor of Finance</p>
+                    <p><strong>Bio:</strong> Mr. Vikram Singh specializes in Environmental Economics, with a focus on sustainable financial practices and corporate responsibility.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty9.jpeg" alt="Dr. Aarti Mehta">
+                    <h3>Dr. Aarti Mehta</h3>
+                    <p><strong>Position:</strong> Professor of Economics</p>
+                    <p><strong>Bio:</strong> Dr. Aarti Mehta's research focuses on Development Economics and International Trade, particularly in relation to environmental sustainability.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty10.jpeg" alt="Mr. Rajesh Kumar">
+                    <h3>Mr. Rajesh Kumar</h3>
+                    <p><strong>Position:</strong> Associate Professor of Human Resource Management</p>
+                    <p><strong>Bio:</strong> Mr. Rajesh Kumar specializes in the relationship between human resource practices and environmental sustainability in corporate sectors.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BSc in Data Science Faculty Section -->
+        <div class="stream-section">
+            <h3>BSc in Data Science</h3>
+            <div class="faculty-grid">
+                <div class="faculty-member">
+                    <img src="faculty11.jpeg" alt="Dr. Vipul Patle">
+                    <h3>Dr. Vipul Patle</h3>
+                    <p><strong>Position:</strong> Associate Professor of Data Science</p>
+                    <p><strong>Bio:</strong> Dr. Vipul Patle specializes in Data Mining, Machine Learning, and Artificial Intelligence, with a focus on predictive analytics in real-world applications.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty12.jpeg" alt="Dr. Devansh Yadav">
+                    <h3>Dr. Devansh Yadav</h3>
+                    <p><strong>Position:</strong> Professor of Computer Science</p>
+                    <p><strong>Bio:</strong> Dr. Devansh Yadav focuses on Artificial Intelligence, Deep Learning, and Big Data Analytics, contributing extensively to research in automated decision-making systems.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty13.jpeg" alt="Ms. Rimsy Dua">
+                    <h3>Ms. Rimsy Dua</h3>
+                    <p><strong>Position:</strong> Assistant Professor of Data Science</p>
+                    <p><strong>Bio:</strong> Ms. Rimsy Dua specializes in Statistical Methods, Predictive Modeling, and Data Visualization techniques for solving complex business problems.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty14.jpeg" alt="Ms. Pooja Powar">
+                    <h3>Ms. Pooja Powar</h3>
+                    <p><strong>Position:</strong> Associate Professor of Data Science</p>
+                    <p><strong>Bio:</strong> Ms. Pooja Powar is known for her expertise in data preprocessing, analysis, and building machine learning models for practical applications in various fields.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty15.jpeg" alt="Dr. Ajay Sharma">
+                    <h3>Dr. Ajay Sharma</h3>
+                    <p><strong>Position:</strong> Professor of Software Engineering</p>
+                    <p><strong>Bio:</strong> Dr. Ajay Sharma's research interests include software development, cloud computing, and cybersecurity, providing valuable insights into the latest technological advancements in the field.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bachelor of Science in Biotechnology Faculty Section -->
+        <div class="stream-section">
+            <h3>Bachelor of Science in Biotechnology</h3>
+            <div class="faculty-grid">
+                <div class="faculty-member">
+                    <img src="faculty16.jpeg" alt="Dr. Ashish Pandey">
+                    <h3>Dr. Ashish Pandey</h3>
+                    <p><strong>Position:</strong> Professor of Biotechnology</p>
+                    <p><strong>Bio:</strong> Dr. Ashish Pandey specializes in Molecular Biology and Genetic Engineering, focusing on cutting-edge research in gene therapy and biotechnology applications.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty17.jpeg" alt="Ms. Komal Gupta">
+                    <h3>Ms. Komal Gupta</h3>
+                    <p><strong>Position:</strong> Associate Professor of Biotechnology</p>
+                    <p><strong>Bio:</strong> Ms. Komal Gupta's research focuses on bioprocessing and microbial biotechnology, with a focus on sustainable solutions in the field of industrial biotechnology.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty18.jpeg" alt="Dr. Om Shinde">
+                    <h3>Dr. Om Shinde</h3>
+                    <p><strong>Position:</strong> Associate Professor of Biotechnology</p>
+                    <p><strong>Bio:</strong> Dr. Om Shinde has extensive experience in plant biotechnology and genetic modification, working towards solutions for improving crop yield and resistance.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty19.jpeg" alt="Mrs. Varsha Tiwari">
+                    <h3>Mrs. Varsha Tiwari</h3>
+                    <p><strong>Position:</strong> Assistant Professor of Biotechnology</p>
+                    <p><strong>Bio:</strong> Mrs. Varsha Tiwari specializes in environmental biotechnology, focusing on the use of bioremediation to address environmental pollution.</p>
+                </div>
+
+                <div class="faculty-member">
+                    <img src="faculty20.jpeg" alt="Dr. Virat Pandey">
+                    <h3>Dr. Virat Pandey</h3>
+                    <p><strong>Position:</strong> Professor of Biotechnology</p>
+                    <p><strong>Bio:</strong> Dr. Virat Pandey is a renowned expert in bioinformatics and systems biology, applying computational tools to understand biological systems better.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <footer style="text-align: center; padding: 20px;background-color: #00274d;color: white;margin-top: 40px;">
+     <div style="margin-top: 10px;">
+        <p>© 2025 MK Degree College. All rights reserved.</p>
+    </div>
+    <div>
+        <div class="nav1">
+            <a href="home.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+            <a href="admissions.html" style="color: white; margin: 0 15px; text-decoration: none;">Admissions</a>
+            <a href="courses.html" style="color: white; margin: 0 15px; text-decoration: none;">Courses</a>
+            <a href="contact.html" style="color: white; margin: 0 15px; text-decoration: none;">Contact Us</a>
+            <a href="scholarships.html" style="color: white; margin: 0 15px; text-decoration: none;">Scholarships</a>
+            <a href="students.html" style="color: white; margin: 0 15px; text-decoration: none;">Student</a>
+            <a href="faculty.html" style="color: white; margin: 0 15px; text-decoration: none;">Faculty</a>
+            <a href="careers.html" style="color: white; margin: 0 15px; text-decoration: none;">Careers</a>
+        </div>
+    </div>
+   </footer>
+</body>
+</html>

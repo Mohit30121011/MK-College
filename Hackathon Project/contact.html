@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MK Degree College</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('college.png') no-repeat center center/cover;
+        }
+
+        header {
+            background: linear-gradient(90deg, #003366, #0074d9);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header .logo { 
+            position: absolute;
+            top: 20px; 
+            right: 10px;
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #00509e;
+        }
+
+        .contact-info, .contact-form {
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3, .contact-form h3 {
+            color: #003366;
+        }
+
+        .contact-info p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #00509e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <img src="textlogo.png" alt="Logo" class="logo">
+    </header>
+
+     <nav>
+        <a href="home.html">Home</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="scholarship.html">Scholarships</a>
+        <a href="student_login.html">Student</a>
+        <a href="faculty_login.html">Faculty</a>
+        <a href="careers.html">Careers</a><a href="staff.html">Staff</a>
+    </nav>
+
+    <div class="container">
+        <h2>Get in Touch with Us!!!</h2>
+
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Address:</strong> MK Degree College,Thakur Village, Kandivali East, Mumbai, Maharashtra 400101</p>
+            <p><strong>Phone:</strong>+91 8433856648</p>
+            <p><strong>Email:</strong> info@mkcollege.edu</p>
+            <p><strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+        </div>
+
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="http://localhost/hackathon/submit_contact_form.php" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Feedback</label>
+                <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px;background-color: #00274d;color: white;margin-top: 40px;">
+     <div style="margin-top: 10px;">
+        <p>© 2025 MK Degree College. All rights reserved.</p>
+    </div>
+    <div>
+        <div class="nav1">
+            <a href="home.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+            <a href="admissions.html" style="color: white; margin: 0 15px; text-decoration: none;">Admissions</a>
+            <a href="courses.html" style="color: white; margin: 0 15px; text-decoration: none;">Courses</a>
+            <a href="contact.html" style="color: white; margin: 0 15px; text-decoration: none;">Contact Us</a>
+            <a href="scholarships.html" style="color: white; margin: 0 15px; text-decoration: none;">Scholarships</a>
+            <a href="students.html" style="color: white; margin: 0 15px; text-decoration: none;">Student</a>
+            <a href="faculty.html" style="color: white; margin: 0 15px; text-decoration: none;">Faculty</a>
+            <a href="careers.html" style="color: white; margin: 0 15px; text-decoration: none;">Careers</a>
+        </div>
+    </div>
+   </footer>
+</body>
+</html>
+
